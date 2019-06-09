@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LaCasseraiController!{% endblock %}
+
+{% block body %}
+<style>
+    body { margin: 0; Padding: 0;}
+    .title { text-align: center;  }
+    .subtitle { text-align: center; font-size: 20px; }
+    .roomTitle { font-size: 33px; text-align: center; padding: 8px; }
+    .roomTitleContainer { width: 100%; height: 4em; }
+    /* Price */
+    .roomPrice { text-align: center }
+    .roomPriceContainer { height: 2em; margin-top: 11px; }
+    /* Image */
+    .roomImageContainer { margin: 0 28px; }
+    .img { height: 170px; width: 230px; }
+    /* Description */
+    .roomDescription {  }
+    .roomDescriptionContainer { margin: 0 44px; text-align: center; height: 5.5em; font-size: 1.1em;}
+    /* Button */
+    .roomButton { display:inline-block; padding: 17px 54px; border:0.1em solid #000000; margin: 20px 0.2em 0.2em 0; border-radius:0.12em; box-sizing: border-box; text-decoration:none; font-family:'Roboto',sans-serif;font-weight:300; color:#000000; text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);background-color:#FFFFFF;text-align:center; transition: all 0.15s; }
+    .roomButton:hover{ color:#000000; background-color:#FFFFFF; text-decoration: none; }
+    .roomButtonContainer { display: flex; justify-content: center}
+    /* Card */
+    .roomContainer { width: 316px; height:450px; border: 0.1em solid; float: left; margin: 0 3em; }
+    .roomContainer:hover {  border: 0.14em solid black;}
+    .roomContainer:hover .roomButton{ border: 0.15em solid black;}
+    .roomsContainer { height: 20em; justify-content: center; display: flex; }
+</style>
+    <div class="titleContainer">
+        <h1 class="title">Hotel La Casserai</h1>
+        <p class="subtitle">Welkom op de Hotel La Casserai pagina. Hier kunt u onze verschillende kamers inzien en boeken.</p>
+    </div>
+    <div class="roomsContainer">
+        {% for room in room %}
+        <div class="roomContainer">
+            <div class="roomTitleContainer">
+                <h5 class="roomTitle">{{ room.name }}</h5>
+            </div>
+            <div class="roomImageContainer">
+                <img class="img" src={{ vich_uploader_asset(room, 'imageFile')}}><br>
+            </div>
+            <div class="roomPriceContainer">
+                <h6 class="roomPrice">${{ room.price }}/dag</h6>
+            </div>
+            <div class="roomDescriptionContainer">
+                <p class="roomDescription">{{ room.description  }}</p>
+            </div>
+            <div class="roomButtonContainer">
+            <a href="/book/{{ room.id }}" class="roomButton">Read More</a>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

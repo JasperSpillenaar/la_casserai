@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+        {% for room in room %}
+            <!-- Page Content -->
+            <div class="container">
+            <!-- Portfolio Item Heading -->
+            <h1 class="my-4">Page Heading
+                <small>Secondary Text</small>
+            </h1>
+            <!-- Portfolio Item Row -->
+            <div class="row">
+                <div class="col-md-8">
+                    <img class="img-fluid" src={{ vich_uploader_asset(room, 'imageFile') }}><br>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="my-3">Beschrijving</h3>
+                    <p>{{ room.description }}</p>
+                    <h3 class="my-3">Project Details</h3>
+                    <ul>
+                        <li>Aantal bedden: {{ room.bed }}</li>
+                        <li>Dolor Sit Amet</li>
+                        <li>Consectetur</li>
+                        <li>Adipiscing Elit</li>
+                    </ul>
+                    <h3 class="my-3">Book room</h3>
+                    {{ include ("book/_form.html.twig") }}
+                </div>
+            </div>
+            <!-- /.row -->
+        {% endfor %}
+    </div>
+{% endblock %}
