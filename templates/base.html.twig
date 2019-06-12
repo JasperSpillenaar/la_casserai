@@ -12,12 +12,16 @@
                 {% if is_granted('ROLE_ADMIN') %}
                     <a class="p-2 text-dark" href="/room">Room</a>
                     <a class="p-2 text-dark" href="/reservation">Reservation</a>
-                    <a class="btn btn-outline-primary" href="/register">Sign up</a>
-                    <a class="btn btn-outline-primary" href="/login">Login</a>
+                    <a class="btn btn-outline-primary" href="/logout">Logout</a>
                 {% else %}
-                    <a class="btn btn-outline-primary" href="/register">Sign up</a>
-                    <a class="btn btn-outline-primary" href="/login">Login</a>
+                    {%if is_granted('ROLE_USER') %}
+                        <a class="btn btn-outline-primary" href="/logout">Logout</a>
+                    {% else %}
+                        <a class="btn btn-outline-primary" href="/register">Sign up</a>
+                        <a class="btn btn-outline-primary" href="/login">Login</a>
+                    {% endif %}
                 {% endif %}
+
             </nav>
 
         </div>
