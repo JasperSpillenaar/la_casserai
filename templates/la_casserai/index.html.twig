@@ -14,7 +14,6 @@
     .roomPriceContainer { height: 2em; margin-top: 11px; }
     /* Image */
     .roomImageContainer { margin: 0 28px; }
-    .img { height: 170px; width: 230px; }
     /* Description */
     .roomDescription {  }
     .roomDescriptionContainer { margin: 0 44px; text-align: center; height: 5.5em; font-size: 1.1em;}
@@ -27,6 +26,7 @@
     .roomContainer:hover {  border: 0.14em solid black;}
     .roomContainer:hover .roomButton{ border: 0.15em solid black;}
     .roomsContainer { height: 20em; justify-content: center; display: flex; }
+    @media (max-width: 1000px) { .roomsContainer{ flex-flow: wrap; } .roomContainer { margin: 36px 1em 0 1em; } }
 </style>
     <div class="titleContainer">
         <h1 class="title">Hotel La Casserai</h1>
@@ -39,7 +39,7 @@
                 <h5 class="roomTitle">{{ room.name }}</h5>
             </div>
             <div class="roomImageContainer">
-                <img class="img" src={{ vich_uploader_asset(room, 'imageFile')}}><br>
+                <img class="img-fluid" alt="room image" src={{ vich_uploader_asset(room, 'imageFile')}}><br>
             </div>
             <div class="roomPriceContainer">
                 <h6 class="roomPrice">${{ room.price }}/dag</h6>
