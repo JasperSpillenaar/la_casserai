@@ -3,6 +3,10 @@
 {% block title %}Room index{% endblock %}
 
 {% block body %}
+    <style>
+        .scherm { position: absolute; height: 100vh; width: 100%; text-align: center}
+    </style>
+    {% if is_granted('ROLE_ADMIN') %}
     <h1>Room index</h1>
 
     <table class="table">
@@ -44,4 +48,7 @@
     </table>
 
     <a href="{{ path('room_new') }}">Create new</a>
+    {% else %}
+        <a href="/"><div class="scherm">U mag niet op deze pagina zijn. Klik op het scherm om terug te gaan</div></a>
+    {% endif %}
 {% endblock %}
