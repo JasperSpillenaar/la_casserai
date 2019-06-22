@@ -19,6 +19,18 @@ class ReservationRepository extends ServiceEntityRepository
         parent::__construct($registry, Reservation::class);
     }
 
+    public function getBetween(array $value)
+    {
+        return $this->createQueryBuilder('room')
+            ->select('IDENTITY(room.room_id)')
+            ->where('room.checkin_date BETWEEN :begin AND :end')
+            ->orWhere('room.checkout_date BETWEEN :begin AND :end')
+            ->setParameter('begin', $value[0])
+            ->setParameter('end', $value[1])
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Reservation[] Returns an array of Reservation objects
     //  */

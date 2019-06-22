@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Reservation;
 use App\Entity\Room;
 use App\Form\RoomType;
 use App\Repository\RoomRepository;
@@ -92,5 +93,31 @@ class RoomController extends AbstractController
         }
 
         return $this->redirectToRoute('room_index');
+    }
+
+    /**
+     * @Route("/check", name="room_check", methods={"POST"})
+     */
+    public function checkDate()
+    {
+        $checkinDate = $_POST["checkin_date"];
+        $checkoutDate = $_POST["checkout_date"];
+
+        $reservation = $this->getDoctrine()
+            ->getRepository( Reservation::class)
+            ->getBetween(array($checkinDate, $checkoutDate));
+
+        $input = array();
+        for ($x = 0; $x < count($reservation); $x++) {
+            array_push($input, $reservation[$x][1]);
+        }
+
+        $available = $this->getDoctrine()
+            ->getRepository(Room::class)
+            ->notIn($input);
+
+        return $this->render('la_casserai/index.html.twig', [
+            'room' => $available,
+        ]);
     }
 }

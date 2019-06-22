@@ -7,8 +7,8 @@
             <!-- Page Content -->
             <div class="container">
             <!-- Portfolio Item Heading -->
-            <h1 class="my-4">Page Heading
-                <small>Secondary Text</small>
+            <h1 class="my-4">{{ room.name }}
+                <small>Room: {{ room.room_nr }}</small>
             </h1>
             <!-- Portfolio Item Row -->
             <div class="row">
@@ -21,12 +21,13 @@
                     <h3 class="my-3">Project Details</h3>
                     <ul>
                         <li>Aantal bedden: {{ room.bed }}</li>
-                        <li>Dolor Sit Amet</li>
-                        <li>Consectetur</li>
-                        <li>Adipiscing Elit</li>
+                        <li>Mini Koelkast</li>
+                        <li>Schitterend uitzicht</li>
                     </ul>
+                    {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
                     <h3 class="my-3">Book room</h3>
                     {{ include ("book/_form.html.twig") }}
+                    {% else %}{% endif %}
                 </div>
             </div>
             <!-- /.row -->

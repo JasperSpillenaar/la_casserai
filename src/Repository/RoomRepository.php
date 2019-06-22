@@ -19,6 +19,15 @@ class RoomRepository extends ServiceEntityRepository
         parent::__construct($registry, Room::class);
     }
 
+    public function notIn(array $value)
+    {
+        $valueAsString = implode(",", $value);
+        return $this->createQueryBuilder('k')
+            ->where("k.id NOT IN ($valueAsString)")
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Room[] Returns an array of Room objects
     //  */
@@ -48,3 +57,4 @@ class RoomRepository extends ServiceEntityRepository
     }
     */
 }
+

@@ -17,26 +17,26 @@ class Reservation
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Room", inversedBy="reservations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Room", inversedBy="Reservations")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $room_id;
+    public $room_id;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="reservations")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user_id;
+    public $user_id;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $checkin_date;
+    public $checkin_date;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $checkout_date;
+    public $checkout_date;
 
     public function getId(): ?int
     {

@@ -4,7 +4,11 @@
 
 {% block body %}
 <style>
-    body { margin: 0; Padding: 0;}
+    /* Form */
+    @media (max-width: 1000px ) { .form { align-items: center; width: 100%;} }
+    .formInput { text-align: center }
+    .form {display: flex; justify-content: center; flex-flow: column; width: 20%;}
+    /* Title */
     .title { text-align: center;  }
     .subtitle { text-align: center; font-size: 20px; }
     .roomTitle { font-size: 33px; text-align: center; padding: 8px; }
@@ -34,6 +38,7 @@
     </div>
     <div class="roomsContainer">
         {% for room in room %}
+            {% if room.available == 1 %}
         <div class="roomContainer">
             <div class="roomTitleContainer">
                 <h5 class="roomTitle">{{ room.name }}</h5>
@@ -51,6 +56,13 @@
             <a href="/book/{{ room.id }}" class="roomButton">Read More</a>
             </div>
             </div>
+
+            {% endif %}
         {% endfor %}
     </div>
+    <form class="form" action="{{ path('room_check') }}" method="post">
+        Checkin Date<input class="formInput" type="date" name="checkin_date">
+        Checkout Date<input class="formInput" type="date" name="checkin_date"><br>
+        <input class="formButton" type="submit" name="submit">
+    </form>
 {% endblock %}
