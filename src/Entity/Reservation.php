@@ -23,7 +23,7 @@ class Reservation
     public $room_id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="reservations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="Reservations")
      * @ORM\JoinColumn(nullable=false)
      */
     public $user_id;
