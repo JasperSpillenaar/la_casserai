@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+    <head>
+        <title>Hello BookViewController!</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+{% endblock %}
+    {% block body %}
+        <style>
+            .fieldset { width: 80%; margin: 0 20%;}
+            .legend {  }
+            .table { width: 100%; }
+            .row {  }
+            .columnHead {  }
+            .column {  }
+        </style>
+
+        <fieldset class="fieldset">
+        <legend>checkins of today:</legend>
+            <table class="table">
+                <tr class="row">
+                    <th class="columnHead">ID</th>
+                    <th class="columnHead">Room ID</th>
+                    <th class="columnHead">Room Name</th>
+                    <th class="columnHead">Username</th>
+                </tr>
+                {% for booking in booking %}
+                <tr class="row">
+                    <td class="column">{{ booking.id }}</td>
+                    <td class="column">{{ booking.room_id }}</td>
+                    <td class="column">{{ booking.user_id }}</td>
+                    <td class="column">{{ booking.checkin_date ? booking.checkin_date|date('d-m-Y') : '' }}</td>
+                </tr>
+            </table>
+        </fieldset>
+    {% endfor %}
+        <fieldset class="fieldset">
+            <legend class="legend">checkouts of today:</legend>
+            <table class="table">
+                <tr class="row">
+                    <th class="columnHead">ID</th>
+                    <th class="columnHead">Room ID</th>
+                    <th class="columnHead">Room Name</th>
+                    <th class="columnHead">Username</th>
+                </tr>
+            {% for endtime in endtime %}
+                <tr class="row">
+                    <td class="column">{{ booking.id }}</td>
+                    <td class="column">{{ booking.room_id }}</td>
+                    <td class="column">{{ booking.user_id }}</td>
+                    <td class="column">{{ endtime.checkout_date ? endtime.checkout_date|date('d-m-Y') : '' }}</td>
+                </tr>
+            </table>
+        </fieldset>
+    {% endfor %}
+{% endblock %}
