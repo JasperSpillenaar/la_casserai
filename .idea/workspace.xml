@@ -4,15 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/templates/la_casserai/index.html.twig" line="25" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0400e45-b10b-49a4-837e-1752b8a97026" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/documentatie/Functioneel Ontwerp.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentatie/Informatiebehoefte Rapport.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentatie/Kwaliteitshandboek.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentatie/Technisch Ontwerp.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/la_casserai/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/la_casserai/index.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="c0400e45-b10b-49a4-837e-1752b8a97026" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/Reservation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+            <state relative-caret-position="52">
+              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -259,8 +251,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="811" />
-    <option name="y" value="83" />
+    <option name="x" value="733" />
+    <option name="y" value="61" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -374,7 +366,7 @@
       <workItem from="1560942467767" duration="3087000" />
       <workItem from="1561055895107" duration="9863000" />
       <workItem from="1561216462518" duration="11626000" />
-      <workItem from="1561293814764" duration="3100000" />
+      <workItem from="1561293814764" duration="3606000" />
     </task>
     <task id="LOCAL-00001" summary="made front-end mobile home page">
       <created>1560329838859</created>
@@ -425,11 +417,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561293671468</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added documentation">
+      <created>1561299891698</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1561299891698</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141224000" />
+    <option name="totallyTimeSpent" value="141730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +440,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="649" y="67" width="784" height="832" extended-state="0" />
+    <frame x="587" y="49" width="784" height="832" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49778762" visible="true" weight="0.41022098" />
@@ -498,7 +497,8 @@
     <MESSAGE value="Added error pages for specific roles" />
     <MESSAGE value="added a lot" />
     <MESSAGE value="changed bookview page" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed bookview page" />
+    <MESSAGE value="added documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added documentation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
@@ -821,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Reservation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+        <state relative-caret-position="52">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
